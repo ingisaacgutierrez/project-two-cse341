@@ -7,6 +7,6 @@ router.get('/', userController.getAll);
 
 router.get('/:username', userController.getSingle);
 
-router.post('/', userController.newContact);
+router.post('/', userController.newUser);
 
 module.exports = router;
