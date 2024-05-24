@@ -1,28 +1,28 @@
 {
-    "user": {
-        "username": "Isaac",
-        "password": "pass456",
-        "email": "isaac@test.com",
-        "phoneNumber": "+1234567890",
-        "deliveryAddress": {
-            "street": "123 Main St",
-            "city": "Guayaquil",
-            "state": "Guayas",
-            "zipCode": "090512"
-        },
-        "order": {
-            "burgers": 2,
-            "fries": 1,
-            "drinks": "Coca-Cola",
-            "dessert": "Ice Cream"
-        },
-        "paymentMethod": {
-            "cash": false,
-            "creditCard": {
-                "cardNumber": "1234 5678 9012 3456",
-                "expiryDate": "12/24",
-                "cvv": "123"
-            }
-        }
+  "user": {
+    "username": "Isaac",
+    "password": "pass456",
+    "email": "isaac@test.com",
+    "phoneNumber": "+1234567890",
+    "deliveryAddress": {
+      "street": "123 Main St",
+      "city": "Guayaquil",
+      "state": "Guayas",
+      "zipCode": "090512"
+    },
+    "order": {
+      "burgers": 2,
+      "fries": 1,
+      "drinks": "Coca-Cola",
+      "dessert": "Ice Cream"
+    },
+    "paymentMethod": {
+      "cash": false,
+      "creditCard": {
+        "cardNumber": "1234 5678 9012 3456",
+        "expiryDate": "12/24",
+        "cvv": "123"
+      }
     }
+  }
 }
