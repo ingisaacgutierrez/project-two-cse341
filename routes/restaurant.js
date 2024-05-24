@@ -3,6 +3,8 @@ const router = express.Router();
 
 const restaurantController = require('../controllers/restaurant');
 
-router.get('/:name', restaurantController.getAll);
+router.get('/', restaurantController.getAll);
+
+router.get('/:name', restaurantController.getSingle);
 
 module.exports = router;
