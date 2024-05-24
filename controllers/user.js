@@ -10,17 +10,21 @@ result.toArray().then((lists) => {
 };
 
 const getSingle = async (req, res) => {
-const userName = req.params.username;
-const result = await mongodb
-    .getDb()
-    .db()
-    .collection('user')
-    .findOne({ 'user.username': userName });
-result.toArray().then((lists) => {
-    res.setHeader('Content-Type', 'application/json');
-    res.status(200).json(result.user);
-});
+    const username = req.params.username; 
+    const result = await mongodb
+        .getDb()
+        .db()
+        .collection('user')
+        .findOne({ 'user.username': username });
+
+    if (result) {
+        res.setHeader('Content-Type', 'application/json');
+        res.status(200).json(result.user);
+    } else {
+        res.status(404).json({ message: 'User Not Found' });
+    }
 };
+
 
 const newUser = async (req, res) => {
     const user = {
