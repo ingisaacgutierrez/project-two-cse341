@@ -5,29 +5,25 @@
     "description": "Restaurant API",
     "version": "1.0.0"
   },
-  "host": "localhost:8080",
+  "host": "project-two-cse341.onrender.com",
   "basePath": "/",
   "tags": [
     {
       "name": "User",
-      "description": "Operations about users"
+      "description": "Operations about user of the delivery food app"
     },
     {
       "name": "Restaurant",
-      "description": "Operations about restaurants"
+      "description": "Operations about restaurant inside of the delivery food app"
     }
   ],
-  "schemes": [
-    "http"
-  ],
+  "schemes": ["https"],
   "paths": {
     "/user/": {
       "get": {
-        "tags":["User"],
+        "tags": ["User"],
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "responses": {
           "200": {
             "description": "OK"
@@ -35,7 +31,7 @@
         }
       },
       "post": {
-        "tags":["User"],
+        "tags": ["User"],
         "description": "",
         "parameters": [
           {
@@ -44,7 +40,28 @@
             "schema": {
               "type": "object",
               "properties": {
-                "user": {
+                "username": {
+                  "example": "any"
+                },
+                "password": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                },
+                "phoneNumber": {
+                  "example": "any"
+                },
+                "deliveryAddress": {
+                  "example": "any"
+                },
+                "restaurant": {
+                  "example": "any"
+                },
+                "order": {
+                  "example": "any"
+                },
+                "paymentMethod": {
                   "example": "any"
                 }
               }
@@ -63,11 +80,9 @@
     },
     "/user/{username}": {
       "get": {
-        "tags":["User"],
+        "tags": ["User"],
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "username",
@@ -79,17 +94,18 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
           }
         }
       }
     },
     "/restaurant/": {
       "get": {
-        "tags":["Restaurant"],
+        "tags": ["Restaurant"],
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "responses": {
           "200": {
             "description": "OK"
@@ -99,11 +115,9 @@
     },
     "/restaurant/{name}": {
       "get": {
-        "tags":["Restaurant"],
+        "tags": ["Restaurant"],
         "description": "",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "name",
@@ -115,6 +129,9 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
           }
         }
       }

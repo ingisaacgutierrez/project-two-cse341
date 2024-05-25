@@ -1,56 +1,50 @@
 [
   {
-    "restaurant": {
-      "name": "Burger Bliss",
-      "address": {
-        "street": "123 Main St",
-        "city": "Guayaquil",
-        "state": "Guayas",
-        "zipCode": "090512"
-      },
-      "phoneNumber": "+1234567890",
-      "menu": {
-        "burgers": ["Cheeseburger", "Veggie Burger", "Bacon Burger"],
-        "fries": ["Regular Fries", "Sweet Potato Fries", "Curly Fries"],
-        "drinks": ["Coca-Cola", "Sprite", "Water"],
-        "desserts": ["Ice Cream", "Apple Pie", "Brownie"]
-      }
+    "name": "Burger Bliss",
+    "address": {
+      "street": "123 Main St",
+      "city": "Guayaquil",
+      "state": "Guayas",
+      "zipCode": "090512"
+    },
+    "phoneNumber": "+1234567890",
+    "menu": {
+      "burgers": ["Cheeseburger", "Veggie Burger", "Bacon Burger"],
+      "fries": ["Regular Fries", "Sweet Potato Fries", "Curly Fries"],
+      "drinks": ["Coca-Cola", "Sprite", "Water"],
+      "desserts": ["Ice Cream", "Apple Pie", "Brownie"]
     }
   },
   {
-    "restaurant": {
-      "name": "Fries Fiesta",
-      "address": {
-        "street": "456 Market St",
-        "city": "Guayaquil",
-        "state": "Guayas",
-        "zipCode": "170143"
-      },
-      "phoneNumber": "+0987654321",
-      "menu": {
-        "burgers": ["Chicken Burger", "Fish Burger", "Double Cheeseburger"],
-        "fries": ["Garlic Fries", "Cheese Fries", "Chili Fries"],
-        "drinks": ["Pepsi", "Fanta", "Lemonade"],
-        "desserts": ["Cheesecake", "Chocolate Cake", "Fruit Salad"]
-      }
+    "name": "Fries Fiesta",
+    "address": {
+      "street": "456 Market St",
+      "city": "Guayaquil",
+      "state": "Guayas",
+      "zipCode": "170143"
+    },
+    "phoneNumber": "+0987654321",
+    "menu": {
+      "burgers": ["Chicken Burger", "Fish Burger", "Double Cheeseburger"],
+      "fries": ["Garlic Fries", "Cheese Fries", "Chili Fries"],
+      "drinks": ["Pepsi", "Fanta", "Lemonade"],
+      "desserts": ["Cheesecake", "Chocolate Cake", "Fruit Salad"]
     }
   },
   {
-    "restaurant": {
-      "name": "Dessert Delight",
-      "address": {
-        "street": "789 Broadway St",
-        "city": "Guayaquil",
-        "state": "Guayas",
-        "zipCode": "010150"
-      },
-      "phoneNumber": "+1122334455",
-      "menu": {
-        "burgers": ["Turkey Burger", "Mushroom Burger", "BBQ Burger"],
-        "fries": ["Truffle Fries", "Waffle Fries", "Steak Fries"],
-        "drinks": ["Iced Tea", "Coffee", "Milkshake"],
-        "desserts": ["Tiramisu", "Panna Cotta", "Gelato"]
-      }
+    "name": "Dessert Delight",
+    "address": {
+      "street": "789 Broadway St",
+      "city": "Guayaquil",
+      "state": "Guayas",
+      "zipCode": "010150"
+    },
+    "phoneNumber": "+1122334455",
+    "menu": {
+      "burgers": ["Turkey Burger", "Mushroom Burger", "BBQ Burger"],
+      "fries": ["Truffle Fries", "Waffle Fries", "Steak Fries"],
+      "drinks": ["Iced Tea", "Coffee", "Milkshake"],
+      "desserts": ["Tiramisu", "Panna Cotta", "Gelato"]
     }
   }
 ]
