@@ -5,28 +5,28 @@
     "description": "Restaurant API",
     "version": "1.0.0"
   },
-  "host": "project-two-cse341.onrender.com",
+  "host": "localhost:8080",
   "basePath": "/",
   "tags": [
     {
       "name": "User",
-      "description": "Operations about user of the delivery food app"
+      "description": "Operations about users of the delivery food app"
     },
     {
       "name": "Restaurant",
-      "description": "Operations about restaurant inside of the delivery food app"
+      "description": "Operations about restaurants in the delivery food app"
     },
     {
       "name": "Not Yet Implemented",
       "description": "These API endpoints are designed and will be created in the near future"
     }
   ],
-  "schemes": ["https"],
+  "schemes": ["http"],
   "paths": {
     "/user/": {
       "get": {
         "tags": ["User"],
-        "description": "",
+        "description": "Retrieve a list of users",
         "produces": ["application/json"],
         "responses": {
           "200": {
@@ -36,37 +36,94 @@
       },
       "post": {
         "tags": ["User"],
-        "description": "",
+        "description": "Create a new user",
         "parameters": [
           {
             "name": "body",
             "in": "body",
+            "required": true,
             "schema": {
               "type": "object",
               "properties": {
                 "username": {
-                  "example": "any"
+                  "type": "string",
+                  "example": "Isaac"
                 },
                 "password": {
-                  "example": "any"
+                  "type": "string",
+                  "example": "pass456"
                 },
                 "email": {
-                  "example": "any"
+                  "type": "string",
+                  "example": "isaac@test.com"
                 },
                 "phoneNumber": {
-                  "example": "any"
+                  "type": "string",
+                  "example": "+1234567890"
                 },
                 "deliveryAddress": {
-                  "example": "any"
+                  "type": "object",
+                  "properties": {
+                    "street": {
+                      "type": "string",
+                      "example": "123 Main St"
+                    },
+                    "city": {
+                      "type": "string",
+                      "example": "Guayaquil"
+                    },
+                    "state": {
+                      "type": "string",
+                      "example": "Guayas"
+                    },
+                    "zipCode": {
+                      "type": "string",
+                      "example": "090512"
+                    }
+                  }
                 },
                 "restaurant": {
-                  "example": "any"
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "example": "Burger Bliss"
+                    }
+                  }
                 },
                 "order": {
-                  "example": "any"
+                  "type": "object",
+                  "properties": {
+                    "burgers": {
+                      "type": "string",
+                      "example": "Cheeseburger"
+                    },
+                    "fries": {
+                      "type": "string",
+                      "example": "Regular Fries"
+                    },
+                    "drinks": {
+                      "type": "string",
+                      "example": "Coca-Cola"
+                    },
+                    "dessert": {
+                      "type": "string",
+                      "example": "Ice Cream"
+                    }
+                  }
                 },
                 "paymentMethod": {
-                  "example": "any"
+                  "type": "object",
+                  "properties": {
+                    "cash": {
+                      "type": "boolean",
+                      "example": false
+                    },
+                    "creditCard": {
+                      "type": "boolean",
+                      "example": true
+                    }
+                  }
                 }
               }
             }
@@ -85,7 +142,7 @@
     "/user/{username}": {
       "get": {
         "tags": ["User"],
-        "description": "",
+        "description": "Retrieve a user by username",
         "produces": ["application/json"],
         "parameters": [
           {
@@ -105,14 +162,104 @@
         }
       },
       "put": {
-        "tags":["Not Yet Implemented"],
-        "description": "",
+        "tags": ["User"],
+        "description": "Update a user by ID",
         "parameters": [
           {
-            "name": "id",
+            "name": "username",
             "in": "path",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "username": {
+                  "type": "string",
+                  "example": "Isaac"
+                },
+                "password": {
+                  "type": "string",
+                  "example": "pass456"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "isaac@test.com"
+                },
+                "phoneNumber": {
+                  "type": "string",
+                  "example": "+1234567890"
+                },
+                "deliveryAddress": {
+                  "type": "object",
+                  "properties": {
+                    "street": {
+                      "type": "string",
+                      "example": "123 Main St"
+                    },
+                    "city": {
+                      "type": "string",
+                      "example": "Guayaquil"
+                    },
+                    "state": {
+                      "type": "string",
+                      "example": "Guayas"
+                    },
+                    "zipCode": {
+                      "type": "string",
+                      "example": "090512"
+                    }
+                  }
+                },
+                "restaurant": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "example": "Burger Bliss"
+                    }
+                  }
+                },
+                "order": {
+                  "type": "object",
+                  "properties": {
+                    "burgers": {
+                      "type": "string",
+                      "example": "Cheeseburger"
+                    },
+                    "fries": {
+                      "type": "string",
+                      "example": "Regular Fries"
+                    },
+                    "drinks": {
+                      "type": "string",
+                      "example": "Coca-Cola"
+                    },
+                    "dessert": {
+                      "type": "string",
+                      "example": "Ice Cream"
+                    }
+                  }
+                },
+                "paymentMethod": {
+                  "type": "object",
+                  "properties": {
+                    "cash": {
+                      "type": "boolean",
+                      "example": false
+                    },
+                    "creditCard": {
+                      "type": "boolean",
+                      "example": true
+                    }
+                  }
+                }
+              }
+            }
           }
         ],
         "responses": {
@@ -125,11 +272,11 @@
         }
       },
       "delete": {
-        "tags":["Not Yet Implemented"],
-        "description": "",
+        "tags": ["User"],
+        "description": "Delete a user by ID",
         "parameters": [
           {
-            "name": "id",
+            "name": "username",
             "in": "path",
             "required": true,
             "type": "string"
@@ -148,11 +295,97 @@
     "/restaurant/": {
       "get": {
         "tags": ["Restaurant"],
-        "description": "",
+        "description": "Retrieve a list of restaurants",
         "produces": ["application/json"],
         "responses": {
           "200": {
             "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": ["Restaurant"],
+        "description": "Create a new restaurant",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "example": "Burger Bliss"
+                },
+                "address": {
+                  "type": "object",
+                  "properties": {
+                    "street": {
+                      "type": "string",
+                      "example": "123 Main St"
+                    },
+                    "city": {
+                      "type": "string",
+                      "example": "Guayaquil"
+                    },
+                    "state": {
+                      "type": "string",
+                      "example": "Guayas"
+                    },
+                    "zipCode": {
+                      "type": "string",
+                      "example": "090512"
+                    }
+                  }
+                },
+                "phoneNumber": {
+                  "type": "string",
+                  "example": "+1234567890"
+                },
+                "menu": {
+                  "type": "object",
+                  "properties": {
+                    "burgers": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "example": ["Cheeseburger", "Veggie Burger", "Bacon Burger"]
+                    },
+                    "fries": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "example": ["Regular Fries", "Sweet Potato Fries", "Curly Fries"]
+                    },
+                    "drinks": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "example": ["Coca-Cola", "Sprite", "Water"]
+                    },
+                    "desserts": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "example": ["Ice Cream", "Apple Pie", "Brownie"]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
@@ -160,7 +393,7 @@
     "/restaurant/{name}": {
       "get": {
         "tags": ["Restaurant"],
-        "description": "",
+        "description": "Retrieve a restaurant by name",
         "produces": ["application/json"],
         "parameters": [
           {
@@ -180,14 +413,86 @@
         }
       },
       "put": {
-        "tags":["Not Yet Implemented"],
-        "description": "",
+        "tags": ["Restaurant"],
+        "description": "Update a restaurant by ID",
         "parameters": [
           {
-            "name": "id",
+            "name": "name",
             "in": "path",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "example": "Burger Bliss"
+                },
+                "address": {
+                  "type": "object",
+                  "properties": {
+                    "street": {
+                      "type": "string",
+                      "example": "123 Main St"
+                    },
+                    "city": {
+                      "type": "string",
+                      "example": "Guayaquil"
+                    },
+                    "state": {
+                      "type": "string",
+                      "example": "Guayas"
+                    },
+                    "zipCode": {
+                      "type": "string",
+                      "example": "090512"
+                    }
+                  }
+                },
+                "phoneNumber": {
+                  "type": "string",
+                  "example": "+1234567890"
+                },
+                "menu": {
+                  "type": "object",
+                  "properties": {
+                    "burgers": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "example": ["Cheeseburger", "Veggie Burger", "Bacon Burger"]
+                    },
+                    "fries": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "example": ["Regular Fries", "Sweet Potato Fries", "Curly Fries"]
+                    },
+                    "drinks": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "example": ["Coca-Cola", "Sprite", "Water"]
+                    },
+                    "desserts": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "example": ["Ice Cream", "Apple Pie", "Brownie"]
+                    }
+                  }
+                }
+              }
+            }
           }
         ],
         "responses": {
@@ -200,11 +505,11 @@
         }
       },
       "delete": {
-        "tags":["Not Yet Implemented"],
-        "description": "",
+        "tags": ["Restaurant"],
+        "description": "Delete a restaurant by ID",
         "parameters": [
           {
-            "name": "id",
+            "name": "name",
             "in": "path",
             "required": true,
             "type": "string"
