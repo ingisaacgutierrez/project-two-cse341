@@ -24,21 +24,7 @@ app.get('/', (req, res) => {
   res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
 });
 
-app.get('/profile', requiresAuth(), async (req, res) => {
-  const username = req.oidc.user.username; 
-  try {
-    const result = await mongodb.getDb().db().collection('user').findOne({ username: username });
-    if (result) {
-      res.setHeader('Content-Type', 'application/json');
-      res.status(200).json(result);
-    } else {
-      res.status(404).json({ message: 'User Not Found' });
-    }
-  } catch (error) {
-    res.status(500).json({ message: 'An error occurred while retrieving the user', error });
-  }
-});
-
+app.get('/', userController.getAll);
 
 app
   .use(bodyParser.json())
