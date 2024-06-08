@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
   res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
 });
 
-app.get('/', requiresAuth(), userController.getAll);
+app.get('/users', requiresAuth(), userController.getAll);
 
 app
   .use(bodyParser.json())
