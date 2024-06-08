@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongodb = require('./db/connect');
+const userController = require('./controllers/user');
 
 const port = process.env.PORT || 8080;
 const app = express();
@@ -24,7 +25,7 @@ app.get('/', (req, res) => {
   res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
 });
 
-app.get('/', userController.getAll);
+app.get('/', requiresAuth(), userController.getAll);
 
 app
   .use(bodyParser.json())
