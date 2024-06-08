@@ -11,9 +11,9 @@ const config = {
   authRequired: false,
   auth0Logout: true,
   secret: process.env.SECRET,
-  baseURL: 'https://project-two-cse341.onrender.com',
-  clientID: 'EgRbFHcAzLGmC6Ki9Kl8Jn3Ma0p64EAD',
-  issuerBaseURL: 'https://dev-2cl6obyj0ux6ly40.us.auth0.com'
+  baseURL: process.env.BASE_URL,
+  clientID: process.env.CLIENT_ID,
+  issuerBaseURL: process.env.ISSUER_BASE_URL,
 };
 
 // auth router attaches /login, /logout, and /callback routes to the baseURL
