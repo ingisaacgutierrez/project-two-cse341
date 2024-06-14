@@ -1,5 +1,5 @@
-const express = require('express');
-const bodyParser = require('body-parser');
+const express = require ('express');
+const bodyParser = require ('body-parser');
 const mongodb = require('./db/connect');
 const userController = require('./controllers/user');
 
